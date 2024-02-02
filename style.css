@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template: 130px 50px 1fr 60px / 1fr;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #eaeaea;
+    font-size: 4.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 1px #232121;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: #375729;
+    margin-bottom: 20px;
+}
+
+header,
+footer {
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+}
+
+header {
+    background-color: #4f7c3a;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+header a {
+    text-decoration: none;
+    color: #eaeaea;
+}
+
+nav {
+    background-color: #232121;
+    border-bottom: 1px solid #4f7c3a;
+    grid-area: nav;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    position: fixed;
+    top: 116px;
+    z-index: 3;
+    width: 100%;
+}
+
+.breadcrumb li {
+    list-style: none;
+    display: inline-block;
+}
+.breadcrumb li+li::before {
+    content: "> ";
+    color: #4f7c3a;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.breadcrumb a {
+    text-decoration: underline;
+    color: #eaeaeac1;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+.breadcrumb a:hover {
+    color: #58913d;
+}
+
+main {
+    background-color: #232121;
+    grid-area: main;
+    padding: 20px 0 60px;
+    
+    display: grid;
+    grid-template: 0px repeat(3, 1fr) / repeat(2, minmax(250px, 450px));
+    grid-template-areas: 
+        "nav ."
+        "c1 c2"
+        "c3 c4"
+        "c5 c6";
+    gap: 40px 100px;
+    justify-content: center;
+    position: relative;
+    top: -34px;
+}
+
+.card {
+    background-color: beige;
+    border-radius: 10px;
+    border: 10px;
+    border: 1px solid gray;
+    box-shadow: 10px 10px 10px ;
+    display: flex;
+    flex-direction: column;
+    transition-duration: .2s;
+}
+.card:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.a:hover,
+.c:hover,
+.e:hover {
+    position: relative;
+    left: -40px;
+}
+
+.b:hover,
+.d:hover,
+.f:hover {
+    position: relative;
+    right: -40px;
+}
+
+.card:nth-child(1) {
+    grid-area: c1;
+}
+
+.card:nth-child(2) {
+    grid-area: c2;
+}
+
+.card:nth-child(3) {
+    grid-area: c3;
+}
+
+.card:nth-child(4) {
+    grid-area: c4;
+}
+
+.card:nth-child(5) {
+    grid-area: c5;
+}
+
+.card:nth-child(6) {
+    grid-area: c6;
+}
+
+.card-img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.subtext {
+    padding: 20px;
+}
+
+.timer {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.mins {
+    padding-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.1rem;
+}
+
+.description {
+    line-height: 1.4;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+}
+
+footer {
+    background-color: #4f7c3a;
+    color: #eaeaea;
+    padding-left: 20px;
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+}
+
+/* to allow nav links to change colour while on current page */
+#home-link,
+#sweet-link,
+#savoury-link {
+    color:#58913d;
+}
+
+/* ================ main / #sweet-page =================== */ 
+#sweet-page,
+#savoury-page {
+    height: 100vh;
+}
+
+#sweet,
+#savoury {
+    display: flex;
+    width: 100%;
+    padding: 60px;
+}
+
+#sweet .card {
+    background-color: beige;
+    height: 510px;
+    width: 33%;
+    border-radius: 10px;
+    border: 10px;
+    border: 1px solid gray;
+    box-shadow: 10px 10px 10px ;
+    display: flex;
+    flex-direction: column;
+    transition-duration: .2s;
+}
+#sweet .card:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.a-sweet:hover,
+.b-sweet:hover,
+.c-sweet:hover,
+.d-sweet:hover,
+.e-sweet:hover,
+.f-sweet:hover {
+    margin: 10px 0;
+    position: relative;
+    left: 0;
+}
+
+/* ================= main / #savoury-page ================ */ 
+#savoury .card {
+    background-color: beige;
+    height: 550px;
+    width: 33%;
+    border-radius: 10px;
+    border: 10px;
+    border: 1px solid gray;
+    box-shadow: 10px 10px 10px ;
+    display: flex;
+    flex-direction: column;
+    transition-duration: .2s;
+}
+#savoury .card:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.a-savoury:hover,
+.b-savoury:hover,
+.c-savoury:hover,
+.d-savoury:hover,
+.e-savoury:hover,
+.f-savoury:hover {
+    margin: 10px 0;
+    position: relative;
+    left: 0;
+}
